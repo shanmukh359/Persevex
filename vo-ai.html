@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persevex: Expert-Level Technology Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #1e3a8a;
+            text-align: center;
+        }
+
+        /* Module List Styles */
+        .module-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .module-item {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .module-item:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .module-header {
+            background-color: #fff;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .module-title {
+            font-size: 1.2rem;
+            color: #2c5282;
+            font-weight: 500;
+        }
+
+        .module-icon {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .module-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .module-content {
+            background-color: #f8fafc;
+            padding: 15px 20px;
+            display: none;
+        }
+
+        .module-content p {
+            margin: 0;
+            color: #4a5568;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1e3a8a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .module-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Persevex</h1>
+        <p>Expert-Level Technology Courses</p>
+    </header>
+    <main>
+        <section id="module-list">
+            <h2>AI/ML Course Modules</h2>
+            <ul class="module-list">
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 1: Introduction to AI & ML</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Understand the fundamentals of artificial intelligence and machine learning, covering key concepts, history, and real-world applications.</p>
+                    </div>
+                </li>
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 2: Mathematics for AI & ML</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Dive into linear algebra, probability, and statistics essential for understanding algorithms and models.</p>
+                    </div>
+                </li>
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 3: Python for AI & ML</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Learn Python programming, including libraries like NumPy, pandas, and Matplotlib, to prepare for machine learning applications.</p>
+                    </div>
+                </li>
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 4: Supervised & Unsupervised Learning</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Explore regression, classification, clustering, and dimensionality reduction techniques with hands-on implementations.</p>
+                    </div>
+                </li>
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 5: Deep Learning & Neural Networks</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Study artificial neural networks (ANNs), convolutional neural networks (CNNs), and recurrent neural networks (RNNs) with TensorFlow and PyTorch.</p>
+                    </div>
+                </li>
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 6: Natural Language Processing (NLP) & Computer Vision</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Learn how AI processes text and images using NLP models, OpenCV, and deep learning techniques.</p>
+                    </div>
+                </li>
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 7: Model Deployment & Optimization</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Optimize ML models, understand hyperparameter tuning, and deploy models using Flask, FastAPI, or cloud platforms.</p>
+                    </div>
+                </li>
+                <li class="module-item">
+                    <div class="module-header">
+                        <h3 class="module-title">Module 8: AI/ML Capstone Project</h3>
+                        <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="module-content">
+                        <p>Work on a real-world AI/ML project using end-to-end implementation, from data processing to deployment.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Persevex - Empowering the Future of AI Education</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const moduleHeaders = document.querySelectorAll('.module-header');
+
+            moduleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.module-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

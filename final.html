@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persevex - Advanced Technology Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar */
+        nav {
+            background: #0a192f;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #64ffda;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #64ffda;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #64ffda;
+            color: #0a192f;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background: #4cffcb;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 5rem 1rem;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0a192f;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-content {
+            padding: 1.5rem;
+        }
+
+        .course-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #0a192f;
+        }
+
+        .course-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .course-button {
+            display: inline-block;
+            background: #0a192f;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .course-button:hover {
+            background: #172a45;
+        }
+
+        /* Features Section */
+        .features {
+            background: #f8f9fa;
+            padding: 5rem 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #64ffda;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #0a192f;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 1rem;
+            background: #fff;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #0a192f;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .submit-button {
+            background: #0a192f;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #172a45;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 5rem 1rem;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Privacy Policy Section */
+        .policy-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .policy-container h2 {
+            font-size: 1.75rem;
+            color: #1e3a8a;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .policy-container p, .policy-container li {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+
+        .policy-container ul {
+            padding-left: 20px;
+        }
+
+        .policy-container ul li {
+            margin-bottom: 10px;
+        }
+
+        .policy-container strong {
+            color: #1e3a8a;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a192f;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links li {
+            margin: 0 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .feature-card {
+                padding: 1rem;
+            }
+
+            .policy-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Persevex</a>
+            <ul class="nav-links">
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Empower Your Future with Persevex</h1>
+            <p>Cutting-edge online courses in advanced technology to propel your career forward.</p>
+            <a href="#courses" class="cta-button">Explore Courses</a>
+        </div>
+    </header>
+
+    <section id="courses" class="courses">
+        <h2 class="section-title">Our Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="course-content">
+                    <h3>Financial Modeling & Fundamental Analysis</h3>
+                    <p>Master the fundamentals and advanced concepts of AI and ML.</p>
+                    <a href="#ai-ml" class="course-button">Learn More</a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="course-content">
+                    <h3>Digital Marketing</h3>
+                    <p>Learn to build modern, responsive websites using HTML, CSS, and JavaScript.</p>
+                    <a href="#web-dev" class="course-button">Learn More</a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="course-content">
+                    <h3>Human Resource Management</h3>
+                    <p>Master Python and build full-stack web applications from scratch.</p>
+                    <a href="#python" class="course-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modules Sections -->
+    <section id="ai-ml" class="courses">
+        <h2 class="section-title">Financial Modeling & Fundamental Analysis</h2>
+        <ul class="module-list">
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 1: Introduction to Financial Statements</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Understand the components of financial statements, including balance sheets, income statements, and cash flow statements. Learn how these documents interrelate and their significance in assessing a company's financial health.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 2: Fundamentals of Financial Analysis</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Develop skills to interpret financial data using key ratios and metrics. This module covers profitability, liquidity, solvency, and efficiency analyses to evaluate a company's performance comprehensively.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 3: Basics of Financial Modeling</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Learn the principles of constructing financial models, focusing on best practices, model design, and the importance of assumptions. Gain proficiency in using Excel for building dynamic and robust financial models.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 4: Forecasting and Budgeting Techniques</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Explore methods for projecting financial performance, including sales forecasting, expense budgeting, and cash flow projections. Understand how to create realistic financial forecasts to inform strategic planning.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 5: Valuation Methods</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Delve into various valuation techniques such as Discounted Cash Flow (DCF), Comparable Company Analysis, and Precedent Transactions. Learn to assess the intrinsic value of businesses and investment opportunities.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 6: Advanced Financial Modeling</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Enhance modeling skills by incorporating complex scenarios, sensitivity analyses, and scenario planning. This module emphasizes creating flexible models that can adapt to changing business environments.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 7: Investment Analysis and Decision Making</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Study the frameworks and tools used in evaluating investment opportunities. Topics include risk assessment, return on investment calculations, and portfolio management strategies.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 8: Capstone Project</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Apply the knowledge and skills acquired throughout the course by working on a comprehensive project. This involves analyzing a real-world company's financial statements, building a financial model, and presenting valuation findings and investment recommendations.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="web-dev" class="courses">
+        <h2 class="section-title">Digital Marketing</h2>
+        <ul class="module-list">
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 1: Introduction to Digital Marketing</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Understand the fundamentals of digital marketing, its evolution, and its significance in the modern business landscape. Explore various digital channels and their roles in reaching and engaging customers.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 2: Search Engine Optimization (SEO)</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p> Learn strategies to enhance website visibility on search engines. Topics include keyword research, on-page and off-page optimization, technical SEO, and understanding search engine algorithms.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 3: Content Marketing</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p> Discover the art of creating and distributing valuable content to attract and retain a clearly defined audience. This module covers content strategy development, storytelling techniques, and effective use of blogs, videos, and infographics.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 4: Social Media Marketing</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Examine how to leverage social media platforms to promote products and services. Learn about audience engagement, platform-specific strategies, social media advertising, and analytics to measure success.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 5: Pay-Per-Click (PPC) Advertising</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Understand the mechanics of PPC campaigns, including Google Ads and social media advertising. Topics cover keyword bidding, ad creation, targeting strategies, and analyzing campaign performance.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 6: Email Marketing</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Explore how to design and implement effective email marketing campaigns. Learn about list building, segmentation, crafting compelling messages, automation, and metrics to gauge campaign effectiveness.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 7: Web Analytics</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Gain insights into tracking and analyzing website and campaign performance using tools like Google Analytics. This module emphasizes data-driven decision-making, understanding key metrics, and optimizing digital strategies based on analytics.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 8: Digital Marketing Strategy and Planning</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Synthesize knowledge from previous modules to develop comprehensive digital marketing strategies. Focus on setting objectives, identifying target audiences, budget allocation, integrating various digital channels, and measuring return on investment (ROI).</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="python" class="courses">
+        <h2 class="section-title">Human Resource Management</h2>
+        <ul class="module-list">
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 1: Introduction to Human Resource Management</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Understand the fundamentals of HR, including its role in an organization, key functions, and the evolving landscape of HR in the digital era.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 2: Recruitment & Talent Acquisition</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Learn how to develop job descriptions, attract top talent, conduct interviews, assess candidates, and build an effective hiring strategy.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 3: Employee Onboarding & Engagement</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Explore best practices for onboarding new hires, fostering a positive work environment, and increasing employee engagement and retention.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 4: Performance Management & Appraisals</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Understand how to set employee goals, monitor performance, conduct evaluations, and provide constructive feedback to enhance productivity.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 5: Compensation & Benefits Management</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Learn about salary structures, incentives, bonuses, benefits programs, and payroll management to maintain employee satisfaction.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 6: Employee Relations & Conflict Resolution</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Study workplace ethics, labor laws, conflict management techniques, and strategies for fostering a positive workplace culture.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 7: Learning & Development (L&D) in HR</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Discover how to design training programs, skill development initiatives, and leadership training to boost employee growth.</p>
+                </div>
+            </li>
+            <li class="module-item">
+                <div class="module-header">
+                    <h3 class="module-title">Module 8: HR Analytics & Digital Transformation</h3>
+                    <svg class="module-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="module-content">
+                    <p>Explore data-driven HR decision-making, workforce analytics, and how technology (HRIS, AI, automation) is transforming HR processes.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose Persevex</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>Industry Experts</h3>
+                <p>Learn from top professionals at the forefront of technology.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3>Cutting-Edge Curriculum</h3>
+                <p>Stay ahead with courses on the latest technological advancements.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3>Global Community</h3>
+                <p>Connect with learners and experts from around the world.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </section>
+
+    <section id="about" class="about-us">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+            <p>Persevex is a leading provider of advanced technology education, dedicated to empowering individuals with the knowledge and skills needed to excel in the rapidly evolving tech landscape. Our team of expert instructors and cutting-edge curriculum ensure that our students are always at the forefront of technological innovation.</p>
+        </div>
+    </section>
+
+    <section id="privacy" class="policy-container">
+        <h2>Privacy Policy</h2>
+        <p>Welcome to <strong>Persevex</strong>. We are committed to protecting your privacy and ensuring the security of your personal data.</p>
+        
+        <h2>1. Information We Collect</h2>
+        <ul>
+            <li><strong>Personal Information:</strong> Name, email, phone number, billing details, account credentials.</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, device details, and website usage statistics.</li>
+            <li><strong>Course & Learning Data:</strong> Progress, quiz results, certifications, and feedback.</li>
+            <li><strong>Payment Information:</strong> Processed securely via third-party payment gateways (we do not store your details).</li>
+        </ul>
+        
+        <h2>2. How We Use Your Information</h2>
+        <ul>
+            <li>Provide and manage our online courses.</li>
+            <li>Personalize your learning experience.</li>
+            <li>Process transactions securely.</li>
+            <li>Send updates, newsletters, and promotions.</li>
+            <li>Improve platform services and support.</li>
+            <li>Comply with legal obligations.</li>
+        </ul>
+        
+        <h2>3. Data Sharing & Disclosure</h2>
+        <p>We do not sell your personal data. We may share it with:</p>
+        <ul>
+            <li><strong>Service Providers:</strong> Payment processing, analytics, email communication, and course delivery.</li>
+            <li><strong>Legal Authorities:</strong> If required by law or legal requests.</li>
+            <li><strong>Business Transfers:</strong> In case of mergers or restructuring.</li>
+        </ul>
+        
+        <h2>4. Data Security</h2>
+        <p>We implement security measures to protect your data. However, no online service is completely secure, so we encourage caution when sharing personal information.</p>
+        
+        <h2>5. Your Rights & Choices</h2>
+        <ul>
+            <li>Access, update, or delete your personal information.</li>
+            <li>Opt out of marketing emails.</li>
+            <li>Request data portability or restrictions.</li>
+            <li>Disable cookies via browser settings.</li>
+        </ul>
+        
+        <h2>6. Cookies & Tracking Technologies</h2>
+        <p>We use cookies and tracking tools for user experience, trend analysis, and service improvement. Manage preferences via browser settings.</p>
+        
+        <h2>7. Third-Party Links</h2>
+        <p>Our website may contain external links. We are not responsible for their privacy practices. Please review their policies before sharing personal data.</p>
+        
+        <h2>8. Updates to This Policy</h2>
+        <p>We may update this Privacy Policy. Changes will be posted here with an updated effective date.</p>
+        
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions, contact us at:</p>
+        <p>📧 <strong>Email:</strong> yathin123reddy@gmail.com, shanmukhshekar21@gmail.com</p>
+        <p>📞 <strong>Phone:</strong> 8660128339, 7337831778</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2025 Persevex. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message submitted successfully!');
+            this.reset();
+        });
+
+        // Course button click handling
+        document.querySelectorAll('.course-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Collapsible modules
+        document.addEventListener('DOMContentLoaded', function() {
+            const moduleHeaders = document.querySelectorAll('.module-header');
+
+            moduleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.module-icon');
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.classList.remove('active');
+                    } else {
+                        content.style.display = 'block';
+                        icon.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
